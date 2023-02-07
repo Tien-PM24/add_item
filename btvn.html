@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height:auto;
+            width: auto;
+            background-color: aqua;
+        }
+        table{
+            width:600px;
+            border-spacing:5;
+            border:1 px polid rgb(58, 57, 57);
+
+        }
+        #tbl tr{
+            height:27px;
+        }
+        #tbl tr th , #tble tr td{
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        #tbl tr:last-child td{
+            border:none;
+        }
+        .intro form input{
+        border-radius: 5%;
+        padding-bottom: 20px;
+        padding-right: 100px;
+        animation-name:nhay;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        }
+        #header{
+            animation-name:nhay;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        table tr th{
+            animation-name:nhay;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        .intro form .btn1{
+            background-color: rgb(180, 176, 176);
+        }
+        @keyframes nhay{
+            0%{color:blueviolet;}
+            10%{color:rgb(17, 165, 17);}
+            20%{color:rgb(122, 28, 67);}
+            30%{color:rgb(236, 179, 21);}
+            40%{color:rgb(228, 50, 6);}
+        }
+        table tr th{
+            background-color: rgb(221, 224, 14);
+        }
+        table{
+            border: 3px solid black;
+        }
+        #tbl tr th{
+            border: 3px solid rgb(36, 34, 34);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header id="header">
+        <marquee class="text" scrollamount="4">
+            Hello ido of our teams TienPM!...Hello ido of our teams TienPM!...Hello ido of our teams TienPM!...Hello ido of our teams Tien PM!...Hello ido of our teams TienPM!...
+        </marquee>
+    </header>
+    <content>
+        <div class="intro">
+            <form>
+                <label > Fullname-Customer</label>
+                <br/>
+                <input class="form-control" type="text" name="Fullname_Cus" id="fn-c"  >
+                <br/>
+                <br/>
+                <label > Id-pro</label>
+                <br/>
+                <input class="form-control" type="text" name="Id_pro" id="id"  >
+                <br/>
+                <br/>
+                <label > Name-pro</label>
+                <br/>
+                <input class="form-control" type="text" name="Name_pro" id="id-pro" >
+                <br/>
+                <br/>
+                <label > Quantity-pro</label>
+                <br/>
+                <input class="form-control" type="text" name="q_q" id="q-q"  >
+                <br/>
+                <br/>
+                <label > price-pro</label>
+                <br/>
+                <input class="form-control" type="text" name="price_p" id="price-p" >
+                <p>
+                <button type="button" onclick="savedata()" > save </button>
+                <button  type="button" onclick="showdata()" >show</button>
+                <button  type="reset" >reset</button>
+                </p>
+            </form><br/><br/>
+            <table id="tbl">
+                <tr>
+                    <th>auto-encrement</th>
+                    <th>Fullname-Customer</th>
+                    <th>Id-pro</th>
+                    <th>Name-pro</th>
+                    <th>Quantity-pro</th>
+                    <th>Price-pro</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+            </table>
+        </div>
+    </content>
+    </div>
+    <script>
+        var data=new array();
+        function savedata(){
+            var a, b,c ,d,e ;
+            a=document.getElementById("fn-c").value;
+            if(a==""){
+                alert("full name not  blank!");
+            }
+            b=document.getElementById("id").value;
+            if(b==""){
+                alert("full name not  blank!");
+            }
+            c=document.getElementById("id-pro").value;
+            if(c==""){
+                alert("full name not  blank!");
+            }
+            d=document.getElementById("q-q").value;
+            if(d==""){
+                alert("full name not  blank!");
+            }
+            e=document.getElementById("price-p").value;
+            if(e==""){
+                alert("full name not  blank!");
+            }
+            if (ckeckErro()==0){
+                data.push({Fullname_Cus:a, Id_pro:b,Name_pro:c, q_q:d,price_p:e });
+            }
+            else alert("ID product is same!");
+        }
+        function showdata(){
+            var html="";
+            for (i in data){
+                var n=i;
+                n++;
+                html +="<tr>";
+                html +="<td>" + (n)+ "</td>";
+                html +="<td>" + data[i].a+ "</td>";
+                html +="<td>" + data[i].b+ "</td>";
+                html +="<td>" + data[i].c+ "</td>";
+                html +="<td>" + data[i].d+ "</td>";
+                html +="<td>" + data[i].e+ "</td>";
+                html +="</tr>";
+            }
+            document.getElementById("tbl").value=html;
+        }
+    </script>
+</body>
+</html>
